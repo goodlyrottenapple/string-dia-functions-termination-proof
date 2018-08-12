@@ -16,8 +16,8 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   ghc-options:         -Wall
-  exposed-modules:     Strings
-  other-modules:       Strings.SVG, Strings.Rules
+  exposed-modules:     Strings, Strings.SVG, Strings.Rules
+  -- other-modules:       
   build-depends:       base >= 4.7 && < 5
                      , protolude >= 0.1.6 && < 0.2
                      , text
@@ -34,6 +34,9 @@ executable strings-exe
   build-depends:       base
                      , strings
                      , protolude >= 0.1.6 && < 0.2
+                     , lucid
+                     , lucid-svg
+                     , containers
   default-language:    Haskell2010
   default-extensions:  OverloadedStrings, NoImplicitPrelude
 
