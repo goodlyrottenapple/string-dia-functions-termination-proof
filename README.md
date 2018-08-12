@@ -20,7 +20,7 @@ To run, first compile the code using [stack](https://docs.haskellstack.org/en/st
 ```
 stack build
 ```
-and then run:
+and then run
 ```
 stack exec strings-exe
 ```
