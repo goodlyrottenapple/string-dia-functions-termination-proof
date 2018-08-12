@@ -231,18 +231,18 @@ print("""
      |   |          |   |
       \ /            \ /
        X              |
-      / \\             |
+      / \\            <*>
      |   |   --->     |
       \ /             |
-       |            h(x,y)
+       |          i(h(x,y))
 h(t1(x,y),t2(x,y))
 """)
 
-r6_u1 = lambda t1,t2,h: lambda x,y: h(t1(x,y),t2(x,y))
-r6_u2 = lambda t1,t2,h: lambda x,y: h(x,y)
+r6_u1 = lambda t1,t2,h,i: lambda x,y: h(t1(x,y),t2(x,y))
+r6_u2 = lambda t1,t2,h,i: lambda x,y: i(h(x,y))
 
-runSolver(t1_def, t2_def, t1a_def, t2a_def, h_def,
-  goalLex([t1,t2,h], [x,y], [t1a,t2a,h], [xa,ya], [(r6_u1,r6_u2)]))
+runSolver(t1_def, t2_def, t1a_def, t2a_def, h_def, i_def,
+  goalLex([t1,t2,h,i], [x,y], [t1a,t2a,h,i], [xa,ya], [(r6_u1,r6_u2)]))
 
 
 
@@ -280,6 +280,23 @@ r8_u2 = lambda i: lambda x: i(x)
 
 runSolver(i_def,
   goalLex([i], [x], [i], [xa], [(r8_u1,r8_u2)]))
+
+
+print("""
+     x          x
+     |          |
+    <*>         |
+     |   --->   |
+    <*>         |
+     |          |
+  i(i(x))       x
+""")
+
+r8b_u1 = lambda i: lambda x: i(i(x))
+r8b_u2 = lambda i: lambda x: x
+
+runSolver(i_def,
+  goalLex([i], [x], [i], [xa], [(r8b_u1,r8b_u2)]))
 
 
 
@@ -419,17 +436,17 @@ print("""
       / \\   /                        \\   /
      |   \ /                          \ /
      |    |                            |
-     |   /                             |
+     |   /                            <*>
       \ /                              |   
        |                               |
-h(t1(x,y),h(t2(x,y),z))           h(x,h(y,z))    
+h(t1(x,y),h(t2(x,y),z))          i(h(x,h(y,z)))
 """)
 
-r15_u1 = lambda t1,t2,h: lambda x,y,z: h(t1(x,y),h(t2(x,y),z))
-r15_u2 = lambda t1,t2,h: lambda x,y,z: h(x,h(y,z))
+r15_u1 = lambda t1,t2,h,i: lambda x,y,z: h(t1(x,y),h(t2(x,y),z))
+r15_u2 = lambda t1,t2,h,i: lambda x,y,z: i(h(x,h(y,z)))
 
-runSolver(t1_def, t2_def, t1a_def, t2a_def, h_def,
-  goalLex([t1,t2,h], [x,y,z], [t1a,t2a,h], [xa,ya,za], [(r15_u1,r15_u2)]))
+runSolver(t1_def, t2_def, t1a_def, t2a_def, h_def, i_def,
+  goalLex([t1,t2,h,i], [x,y,z], [t1a,t2a,h,i], [xa,ya,za], [(r15_u1,r15_u2)]))
 
 
 
