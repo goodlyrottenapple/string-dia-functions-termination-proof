@@ -4,7 +4,7 @@ This repository hosts the code used in proving termination and local confluence 
 
 
 ## Termination
-The termination proof can be found in the `termination.py` file, which is a Z3 Python script, implementing the termination argument of the string diagrammatic representation of finite functions using polynomial interpretation.
+The termination proof can be found in the `termination.py` file, which is a Python script, which uses [Z3](https://github.com/Z3Prover/z3) to check the termination argument of the rewrite system, using polynomial interpretation.
 
 To run, please install the Z3 solver and run 
 ```
