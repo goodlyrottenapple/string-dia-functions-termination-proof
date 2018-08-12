@@ -242,7 +242,7 @@ printCriticalPeaks ps = do
         h1_ "Confluence proofs"
         p_ $ toHtml $ "There are " ++ (show $ length ps) ++ 
             " critical peaks. To see the confluence proof, click on corresponding diagram below:"
-        p_ $ i_ "Note: Some diagrams appear to only have one branch. This is because the diagram reduces to the same diagram via multiple different rules in one step"
+        p_ $ i_ "Note: Some diagrams appear to only have one branch. This is because the diagram reduces to the same diagram via multiple different rules in one step."
         -- "Note: The proofs are " <> mark_ [class_ "green"] "green" 
             -- <> " if confluent, and " <> mark_ [class_ "red"] "red" <> " otherwise."
     div_ $ do
