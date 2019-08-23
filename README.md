@@ -1,6 +1,6 @@
 # String diagrams for functions
 
-This repository hosts the code used in proving termination and local confluence for a string diagrammatic presentation of functions between finite sets.
+This repository hosts the code used in proving termination and local confluence for a string diagrammatic presentation of functions between finite sets. See this [paper](https://gdlyrttnap.pl/resources/papers/syco1.pdf) for further details.
 
 
 ## Termination
